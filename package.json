@@ -1,0 +1,17 @@
+{
+    "name": "com.jimmylab.dom-util",
+    "version": "0.0.1",
+    "displayName": "DomUtil",
+    "description": "DOM utilities and extensions for UI Toolkit",
+    "unity": "2022.2",
+    "documentationUrl": "https://jimmylab.net/",
+    "dependencies": {
+    },
+    "keywords": [
+    ],
+    "author": {
+        "name": "Jimmy Liu",
+        "email": "webmaster@jimmylab.net",
+        "url": "https://jimmylab.net/"
+    }
+}
