@@ -2,6 +2,8 @@
 
 ## H函数
 
+灵感借鉴自前端框架，
+
 借用typescript的语法来描述
 
 ```typescript
@@ -9,8 +11,20 @@
         class  ?: string | IEnumerable<string>,
         id     ?: string,
         init   ?: (T => void),
-        child  ?: VisualElement | IEnumerable<VisualElement>
+        child  ?: IEnumerable<VisualElement>
     )
+```
+
+示例：
+```csharp
+H(id: "container", child: new [] {
+    H(new[]{"item", "flex-row"}, child: new [] {
+        H("img", init: image => {
+            image.style.backgroundImage = preview;
+        }),
+        H<Label>("img-caption", init: label => label.text = "Alt text"),
+    })
+});
 ```
 
 ## CSS解析、查询

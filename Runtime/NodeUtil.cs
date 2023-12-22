@@ -71,7 +71,7 @@ namespace DomUtil {
             return H<VisualElement>(@class, id, init, child);
         }
         public static VisualElement H(
-            IEnumerable<string> @class = null,
+            IEnumerable<string> @class,
             string id = null,
             Action<VisualElement> init = null,
             IEnumerable<VisualElement> child = null
@@ -112,7 +112,8 @@ namespace DomUtil {
                 // You cannot omit new **TextElement**
                 // since the Button doesn't inherit from Label, and vice versa,
                 // otherwise c# cannot determine the best type of array (Fuck C#).
-                // 你不能省略new后面的TextElement，因为Button与Label不是继承关系，所以必须显式声明，否则C#找不到数组最佳类型(傻逼C#)。
+                // 你不能省略new后面的TextElement，因为Button与Label不是继承关系，所以必须显式声明，否则C#找不到数组最佳类型
+                // 傻逼C#就不能找到公共父类吗？
                 H<Button>(init: el => el.text = "button"),
                 H<Label>(new []{"BB", "CC"}, init: el => { el.text = "text"; }),
             });
